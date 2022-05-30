@@ -13,25 +13,26 @@
         android:layout_height="250dp"
         android:layout_marginStart="80dp"
 
-        android:layout_marginTop="168dp"
+        android:layout_marginTop="56dp"
         android:layout_marginEnd="80dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@drawable/logo" />
+        android:src="@drawable/logo"/>
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="75dp"
-        android:layout_marginTop="444dp"
+        android:layout_marginTop="344dp"
         android:layout_marginEnd="75dp"
         android:fontFamily="sans-serif-medium"
         android:text="Добро пожаловать!"
         android:textSize="28sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -39,7 +40,7 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="492dp"
+        android:layout_marginTop="400dp"
         android:fontFamily="sans-serif-medium"
         android:gravity="center"
         android:text="В этом приложении вы сможете отслеживать выход новых фильмов в кинотеатрах города, а также дополнять списки фильмов и кинотеатров."

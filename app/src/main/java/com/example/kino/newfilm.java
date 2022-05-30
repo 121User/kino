@@ -50,7 +50,7 @@ public class newfilm extends AppCompatActivity {
 
     }
     public void onclick(View v) {
-        mtn = new MyTaskN();
+        mtn = new newfilm.MyTaskN();
         mtn.execute(tvName.getText().toString());
 //        lvMain.getCheckedItemPositions();
     }
@@ -80,7 +80,7 @@ public class newfilm extends AppCompatActivity {
             }
             myConnection.setDoOutput(true);
             try {
-                myConnection.getOutputStream().write( ("id=3&СinemaID=" + params[0]+"&FilmsID="+params[1]).getBytes());
+                myConnection.getOutputStream().write( ("id=3&IDtheatre=" + params[0]+"&IDfilm="+params[1]).getBytes());
             } catch (IOException e) {
                 e.printStackTrace();
             };
@@ -140,7 +140,7 @@ public class newfilm extends AppCompatActivity {
             }
             myConnection.setDoOutput(true);
             try {
-                myConnection.getOutputStream().write( ("id=2&name=" + params[0]).getBytes());
+                myConnection.getOutputStream().write( ("id=2&Name=" + params[0]).getBytes());
             } catch (IOException e) {
                 e.printStackTrace();
             };
@@ -182,7 +182,7 @@ public class newfilm extends AppCompatActivity {
                 LinearLayout ll=(LinearLayout)lvMain.getChildAt(i);
                 CheckBox ch=(CheckBox)ll.getChildAt(0);
                 if (ch.isChecked()){
-                    mttf = new MyTaskTF();
+                    mttf = new newfilm.MyTaskTF();
                     mttf.execute(st[1],result);
                 };
             }
@@ -201,7 +201,7 @@ public class newfilm extends AppCompatActivity {
             ArrayList<String[]> res = new ArrayList<>();
             HttpURLConnection myConnection = null;
             try {
-                URL githubEndpoint = new URL("http://10.0.2.2:8080/json?id=3");
+                URL githubEndpoint = new URL("http://10.0.2.2:8080/kino?id=3");
                 myConnection =
                         (HttpURLConnection) githubEndpoint.openConnection();
             } catch (MalformedURLException e) {
@@ -301,7 +301,7 @@ public class newfilm extends AppCompatActivity {
         @Override
         protected void onPostExecute(ArrayList<String[]> result) {
             super.onPostExecute(result);
-            ClAdapter adapter3=new ClAdapter(tvInfo.getContext(),result);
+            newfilm.ClAdapter adapter3=new newfilm.ClAdapter(tvInfo.getContext(),result);
 //            lvMain = (ListView) findViewById(R.id.lvMain);
             lvMain.setAdapter(adapter3);
             tvInfo.setText("End");
@@ -348,5 +348,4 @@ public class newfilm extends AppCompatActivity {
             return true;
         }
     }
-
 }
